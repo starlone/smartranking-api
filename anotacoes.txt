@@ -1,0 +1,18 @@
+# Criar um projeto
+nest new smartranking-api
+
+# Criar um modulo
+nest g module jogadores
+
+# A aplicação deve ter pelo menos um modulo, o principal é o app.module. Serve para separar as features
+
+# Criar um controller
+nest g controller jogadores
+
+# Criar um service.
+nest g service jogadores
+
+# Service é um provider, ele pode ser injetado. Geralmente armazena as regras de negocio
+
+
+
