@@ -14,5 +14,13 @@ nest g service jogadores
 
 # Service é um provider, ele pode ser injetado. Geralmente armazena as regras de negocio
 
+# Utilizando mongodb
+
+# Utilizando servico free da mongodb.com 
+https://www.mongodb.com/
+
+Senha
+RJfEQGN88uvVXY5N
+
 
 

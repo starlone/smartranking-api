@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, NotFoundException, Post, Query } from '@nestjs/common';
 import { CriarJogadorDto } from './dto/criar-jogador.dto';
 import { Jogador } from './interfaces/jogador.interface';
 import { JogadoresService } from './jogadores.service';
@@ -16,13 +16,16 @@ export class JogadoresController {
     @Get()
     async consultarJogadores(@Query('email') email: string): Promise<Jogador[] | Jogador> {
         if (email) {
-            return this.jogadoresService.consultarJogadoresPeloEmail(email);
+            const jogador = await this.jogadoresService.consultarJogadoresPeloEmail(email);
+            if (!jogador)
+                throw new NotFoundException('Não foi encontrado jogador com o email '+ email);
+            return jogador
         }
         return this.jogadoresService.consultarJogadores();
     }
 
     @Delete()
     async excluirJogadorPorEmail(@Query('email') email: string) {
-        this.jogadoresService.excluirJogador(email);
+        await this.jogadoresService.excluirJogador(email);
     }
 }
