@@ -50,7 +50,7 @@ export class DesafiosController {
    @Delete('/:_id')
    async deletarDesafio(
        @Param('_id') _id: string): Promise<void> {
-           this.desafiosService.deletarDesafio(_id)
+           await this.desafiosService.deletarDesafio(_id)
     }
 
 }
