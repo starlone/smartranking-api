@@ -22,5 +22,9 @@ https://www.mongodb.com/
 Senha
 RJfEQGN88uvVXY5N
 
+# Para que um modulo acesse um provider de outro modulo é preciso que esse outro defina o export da classe e no modulo desejado adicionar esse modulo no import
+
+
+
 
 
